@@ -6,5 +6,5 @@
 ### Description
 Spaceman is a guessing game. There is a mystery word which the user tries to guess one letter at a time.
 
-### Technologies used
+### Technologies used:
 - Python 3.7.0
