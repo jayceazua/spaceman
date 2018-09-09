@@ -2,7 +2,7 @@ import random
 
 def load_word():
     # open the file and read it
-   f = open('hangman_words.txt', 'r')
+   f = open('words.txt', 'r')
    # read it per lines
    words_list = f.readlines()
    # close the file after
@@ -70,7 +70,7 @@ def get_available_letters(letters_guessed):
     # return the choices_left after it removes everything from within
     return choices_left
 
-def hangman(secret_word):
+def spaceman(secret_word):
     '''
     secretWord: string, the secret word to guess.
 
@@ -131,4 +131,4 @@ def hangman(secret_word):
 
 
 secret_word = load_word()
-hangman(load_word())
+spaceman(load_word())
