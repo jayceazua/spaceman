@@ -97,7 +97,7 @@ def spaceman(secret_word):
     # get the name of the user
     user_name = raw_input('-> ')
     # print welcome message
-    print("Welcome {}, to Jayce's CS1 Hangman Game,".format(user_name))
+    print("Welcome {}, to the Spaceman Game,".format(user_name))
     print("the word to guess is {} letters long.".format(length_word))
 
     # while the word is not guessed right continue to play the game
