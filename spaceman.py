@@ -123,15 +123,6 @@ def spaceman(secret_word):
         print('You won! the word was {}'.format(secret_word))
 
 
-# Future developments:
-# >> need to have edge cases:
-### 1. limit the amount of turns
-### 2. exit if the user reaches their max turns allowed.
-### 3. allow the user to guess the complete word if given the chance
-### 4. once the user wins or losess allow for the user to reset the game
-# >> nice to have edge cases
-### Edge Case: did the user actually put in one letter and is it a letter or charater
-
 
 secret_word = load_word()
 spaceman(load_word())
