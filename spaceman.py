@@ -49,7 +49,7 @@ def get_guessed_word(secret_word, letters_guessed):
             word += letter + ""
         # if not append it with a underscore
         else:
-            word += "_ "
+            word += " _ "
     # return the word once we finish appending
     return word
 
@@ -104,7 +104,7 @@ def spaceman(secret_word):
     while not is_word_guessed(secret_word, letters_guessed):
         print('Guess a letter that is in the word.')
         # capture the user's input of a single letter
-        user_guess = raw_input('-> ')
+        user_guess = raw_input('-> ').lower()
         # if the user's input is not in the letters already guessed list
         if user_guess not in letters_guessed:
             # append the new letter into the list
