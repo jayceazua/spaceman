@@ -97,8 +97,8 @@ def spaceman(secret_word):
     # get the name of the user
     user_name = raw_input('-> ')
     # print welcome message
-    print("Welcome {}, to the Spaceman Game,".format(user_name))
-    print("the word to guess is {} letters long.".format(length_word))
+    print("Welcome {}, to the Spaceman Game! \nYou have 7 tries to get this right or you will be sent to space.".format(user_name))
+    print("The word to guess is {} letters long.".format(length_word))
 
     # while the word is not guessed right continue to play the game
     while not is_word_guessed(secret_word, letters_guessed):
