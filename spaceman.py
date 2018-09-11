@@ -50,6 +50,8 @@ def get_guessed_word(secret_word, letters_guessed):
         # if not append it with a underscore
         else:
             word += " _ "
+
+
     # return the word once we finish appending
     return word
 
@@ -99,7 +101,7 @@ def spaceman(secret_word):
     # print welcome message
     print("Welcome {}, to the Spaceman Game! \nYou have 7 tries to get this right or you will be sent to space.".format(user_name))
     print("The word to guess is {} letters long.".format(length_word))
-
+    
     # while the word is not guessed right continue to play the game
     while not is_word_guessed(secret_word, letters_guessed):
         print('Guess a letter that is in the word.')
