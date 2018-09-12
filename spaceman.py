@@ -146,7 +146,7 @@ def spaceman(secret_word):
                 # if the letter is in the letters guessed list print the following
                 print('Guess another letter that you have not chosen yet.')
         else:
-            print('You have been blasted off into space. Should have played hangman.')
+            print('You lost your wife. I guess it is not all too bad.')
             print('The word was: {}.'.format(secret_word))
             break
     else:
