@@ -97,16 +97,16 @@ def spaceman(secret_word):
     letters_guessed = []
     print("What is your name?")
     # get the name of the user
-    user_name = raw_input('-> ')
+    user_name = input('-> ')
     # print welcome message
     print("Welcome {}, to the Spaceman Game! \nYou have 7 tries to get this right or you will be sent to space.".format(user_name))
     print("The word to guess is {} letters long.".format(length_word))
-    
+
     # while the word is not guessed right continue to play the game
     while not is_word_guessed(secret_word, letters_guessed):
         print('Guess a letter that is in the word.')
         # capture the user's input of a single letter
-        user_guess = raw_input('-> ').lower()
+        user_guess = input('-> ').lower()
         # if the user's input is not in the letters already guessed list
         if user_guess not in letters_guessed:
             # append the new letter into the list
@@ -114,9 +114,9 @@ def spaceman(secret_word):
             # if is_word_guessed(secret_word, letters_guessed) is not True:
             if not is_word_guessed(secret_word,letters_guessed):  # Idiomatic python example
                 # display to the user the amount of letters left to guess
-                print "Letter you have not guessed yet: {} ".format(get_available_letters(letters_guessed))
+                print("Letter you have not guessed yet: {} ".format(get_available_letters(letters_guessed)))
                 # show the word with underscores and the correctletters in order
-                print "You are still missing these letters {} ".format(get_guessed_word(secret_word, letters_guessed))
+                print("You are still missing these letters {} ".format(get_guessed_word(secret_word, letters_guessed)))
         else:
             # if the letter is in the letters guessed list print the following
             print('Guess another letter that you have not chosen yet.')
