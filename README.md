@@ -7,7 +7,7 @@
 Spaceman is a guessing game. There is a mystery word which the user tries to guess one letter at a time.
 
 ### To start game
-``` $ python spaceman.py ```
+``` $ python3 spaceman.py ```
 
 ### Technologies used:
 - Python 3.7.0

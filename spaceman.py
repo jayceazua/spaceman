@@ -72,6 +72,15 @@ def get_available_letters(letters_guessed):
     # return the choices_left after it removes everything from within
     return choices_left
 
+# def lives(user_guess, secret_word):
+#     lives = 7
+#     if user_guess in secret_word:
+#         print('Correct!!')
+#     else:
+#         lives -= 1
+#         print('Wrong!')
+#     return lives
+
 def spaceman(secret_word):
     '''
     secretWord: string, the secret word to guess.
@@ -90,7 +99,8 @@ def spaceman(secret_word):
       partially guessed word so far, as well as letters that the
       user has not yet guessed.
     '''
-    # FILL IN YOUR CODE HERE...
+    # FILL IN YOUR CODE HERE
+    lives = 7
     # get the length of the secret_word
     length_word = len(secret_word)
     # declare an empty list
@@ -104,22 +114,32 @@ def spaceman(secret_word):
 
     # while the word is not guessed right continue to play the game
     while not is_word_guessed(secret_word, letters_guessed):
-        print('Guess a letter that is in the word.')
-        # capture the user's input of a single letter
-        user_guess = input('-> ').lower()
-        # if the user's input is not in the letters already guessed list
-        if user_guess not in letters_guessed:
-            # append the new letter into the list
-            letters_guessed.append(user_guess)
-            # if is_word_guessed(secret_word, letters_guessed) is not True:
-            # if not is_word_guessed(secret_word,letters_guessed):  # Idiomatic python example
+        while lives > 0:
+            print('Guess a letter that is in the word.')
+            # capture the user's input of a single letter
+            user_guess = input('-> ').lower()
+            # if the user's input is not in the letters already guessed list
+            if user_guess not in letters_guessed:
+                if user_guess in secret_word:
+                    pass
+                else:
+                    lives -= 1
+                    print(lives)
+                # append the new letter into the list
+                letters_guessed.append(user_guess)
+                # if is_word_guessed(secret_word, letters_guessed) is not True:
+                # if not is_word_guessed(secret_word,letters_guessed):  # Idiomatic python example
                 # display to the user the amount of letters left to guess
-            print("Letter you have not guessed yet: {} ".format(get_available_letters(letters_guessed)))
+                print("Letter you have not guessed yet: {} ".format(get_available_letters(letters_guessed)))
                 # show the word with underscores and the correctletters in order
-            print("You are still missing these letters {} ".format(get_guessed_word(secret_word, letters_guessed)))
+                print("You are still missing these letters {} ".format(get_guessed_word(secret_word, letters_guessed)))
+            else:
+                # if the letter is in the letters guessed list print the following
+                print('Guess another letter that you have not chosen yet.')
         else:
-            # if the letter is in the letters guessed list print the following
-            print('Guess another letter that you have not chosen yet.')
+            print('You have been blasted off into space. Should have played hangman.')
+            print('The word was: {}.'.format(secret_word))
+            break
     else:
         # once the loop returns False print the message that the user won
         print('You won! the word was {}'.format(secret_word))
