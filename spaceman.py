@@ -1,4 +1,5 @@
 import random
+import lossTurn
 
 def load_word():
     # open the file and read it
@@ -72,14 +73,22 @@ def get_available_letters(letters_guessed):
     # return the choices_left after it removes everything from within
     return choices_left
 
-# def lives(user_guess, secret_word):
-#     lives = 7
-#     if user_guess in secret_word:
-#         print('Correct!!')
-#     else:
-#         lives -= 1
-#         print('Wrong!')
-#     return lives
+def loss(lives):
+    if lives == 6:
+        print(lossTurn.loss_1)
+    if lives == 5:
+        print(lossTurn.loss_2)
+    if lives == 4:
+        print(lossTurn.loss_3)
+    if lives == 3:
+        print(lossTurn.loss_4)
+    if lives == 2:
+        print(lossTurn.loss_5)
+    if lives == 1:
+        print(lossTurn.loss_6)
+    if lives == 0:
+        print(lossTurn.loss_7)
+
 
 def spaceman(secret_word):
     '''
@@ -120,17 +129,17 @@ def spaceman(secret_word):
             user_guess = input('-> ').lower()
             # if the user's input is not in the letters already guessed list
             if user_guess not in letters_guessed:
-                if user_guess in secret_word:
-                    pass
-                else:
-                    lives -= 1
-                    print(lives)
                 # append the new letter into the list
                 letters_guessed.append(user_guess)
                 # if is_word_guessed(secret_word, letters_guessed) is not True:
                 # if not is_word_guessed(secret_word,letters_guessed):  # Idiomatic python example
                 # display to the user the amount of letters left to guess
                 print("Letter you have not guessed yet: {} ".format(get_available_letters(letters_guessed)))
+                if user_guess in secret_word:
+                    pass
+                else:
+                    lives -= 1
+                    loss(lives)
                 # show the word with underscores and the correctletters in order
                 print("You are still missing these letters {} ".format(get_guessed_word(secret_word, letters_guessed)))
             else:
