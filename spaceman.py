@@ -112,11 +112,11 @@ def spaceman(secret_word):
             # append the new letter into the list
             letters_guessed.append(user_guess)
             # if is_word_guessed(secret_word, letters_guessed) is not True:
-            if not is_word_guessed(secret_word,letters_guessed):  # Idiomatic python example
+            # if not is_word_guessed(secret_word,letters_guessed):  # Idiomatic python example
                 # display to the user the amount of letters left to guess
-                print("Letter you have not guessed yet: {} ".format(get_available_letters(letters_guessed)))
+            print("Letter you have not guessed yet: {} ".format(get_available_letters(letters_guessed)))
                 # show the word with underscores and the correctletters in order
-                print("You are still missing these letters {} ".format(get_guessed_word(secret_word, letters_guessed)))
+            print("You are still missing these letters {} ".format(get_guessed_word(secret_word, letters_guessed)))
         else:
             # if the letter is in the letters guessed list print the following
             print('Guess another letter that you have not chosen yet.')
