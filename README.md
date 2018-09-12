@@ -13,7 +13,7 @@ Spaceman is a guessing game. There is a mystery word which the user tries to gue
 - Python 3.7.0
 
 ## Future developments:
-- limit the amount of turns
-- exit if the user reaches their max turns allowed.
+- ✓ limit the amount of turns
+- ✓ exit if the user reaches their max turns allowed.
 - allow the user to guess the complete word if given the chance
-- once the user wins or loses allow for the user to reset the game
+- draw ascii figure...
