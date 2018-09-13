@@ -89,6 +89,7 @@ def loss(lives):
     if lives == 0:
         print(lossTurn.loss_7)
 
+# sudden_death round user inputs a phrase and activates
 
 def spaceman(secret_word):
     '''
@@ -148,7 +149,7 @@ def spaceman(secret_word):
         else:
             print('You lost your wife. I guess it is not all too bad.')
             print('The word was: {}.'.format(secret_word))
-            break
+            break # exits out of the loop
     else:
         # once the loop returns False print the message that the user won
         print('You won! the word was {}'.format(secret_word))
