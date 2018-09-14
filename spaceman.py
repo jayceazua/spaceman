@@ -139,6 +139,7 @@ def spaceman(secret_word):
                 if user_guess in secret_word:
                     pass
                 else:
+                    # decrease life points
                     lives -= 1
                     loss(lives)
                 # show the word with underscores and the correctletters in order
